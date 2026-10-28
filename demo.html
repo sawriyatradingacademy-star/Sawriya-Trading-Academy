@@ -1,0 +1,838 @@
+<!-- ... existing code ... -->
+<title>Sawriya Trading Academy - Master Financial Markets</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Google Fonts: Inter & JetBrains Mono -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    brand: {
+                        50: '#f0fdf4',
+                        100: '#dcfce7',
+                        500: '#22c55e',
+                        600: '#16a34a',
+                        700: '#15803d',
+                        accent: '#00e676',
+                        dark: '#0b0f17',
+                        card: '#131b2a',
+                        border: '#1e293b'
+                    }
+                },
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                    mono: ['JetBrains Mono', 'monospace']
+                }
+            }
+        }
+    }
+</script>
+<style>
+    body {
+        background-color: #0b0f17;
+        color: #e2e8f0;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .glow-effect {
+        box-shadow: 0 0 25px -5px rgba(34, 197, 94, 0.25);
+    }
+
+    .glass-nav {
+        background: rgba(11, 15, 23, 0.85);
+        backdrop-filter: blur(12px);
+    }
+
+    .gradient-text {
+        background: linear-gradient(135deg, #22c55e 0%, #38bdf8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .market-up {
+        color: #22c55e;
+    }
+
+    .market-down {
+        color: #ef4444;
+    }
+
+    .ticker-wrap {
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .ticker-move {
+        display: inline-block;
+        animation: ticker 25s linear infinite;
+    }
+
+    @keyframes ticker {
+        0% {
+            transform: translate3d(0, 0, 0);
+        }
+
+        100% {
+            transform: translate3d(-50%, 0, 0);
+        }
+    }
+</style>
+</head>
+
+<body class="antialiased selection:bg-brand-500 selection:text-black">
+
+    <!-- Top Market Ticker Bar -->
+    <div class="bg-slate-900 border-b border-slate-800 text-xs py-2 px-4 ticker-wrap">
+        <div class="ticker-move font-mono space-x-8 inline-flex" id="ticker-content">
+            <span><strong class="text-slate-400">NIFTY 50</strong> 22,450.80 <span class="market-up">+0.8% <i
+                        class="fa-solid fa-arrow-trend-up"></i></span></span>
+            <span><strong class="text-slate-400">BANK NIFTY</strong> 48,120.15 <span class="market-up">+1.2% <i
+                        class="fa-solid fa-arrow-trend-up"></i></span></span>
+            <span><strong class="text-slate-400">BTC/USD</strong> $68,420.50 <span class="market-up">+2.4% <i
+                        class="fa-solid fa-arrow-trend-up"></i></span></span>
+            <span><strong class="text-slate-400">S&P 500</strong> 5,117.09 <span class="market-up">+0.6% <i
+                        class="fa-solid fa-arrow-trend-up"></i></span></span>
+            <span><strong class="text-slate-400">EUR/USD</strong> 1.0842 <span class="market-down">-0.15% <i
+                        class="fa-solid fa-arrow-trend-down"></i></span></span>
+            <span><strong class="text-slate-400">GOLD</strong> $2,165.30 <span class="market-down">-0.05% <i
+                        class="fa-solid fa-arrow-trend-down"></i></span></span>
+            <!-- Duplicate for infinite marquee effect -->
+            <span><strong class="text-slate-400">NIFTY 50</strong> 22,450.80 <span class="market-up">+0.8% <i
+                        class="fa-solid fa-arrow-trend-up"></i></span></span>
+            <span><strong class="text-slate-400">BANK NIFTY</strong> 48,120.15 <span class="market-up">+1.2% <i
+                        class="fa-solid fa-arrow-trend-up"></i></span></span>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 glass-nav border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3 group">
+                <div
+                    class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-emerald-400 flex items-center justify-center shadow-lg shadow-brand-500/20">
+                    <i class="fa-solid fa-chart-line text-slate-950 font-bold text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight text-white block leading-none">Sawriya</span>
+                    <span class="text-xs font-mono text-brand-500 tracking-widest uppercase">Trading Academy</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-slate-300">
+                <a href="#about" class="hover:text-brand-500 transition-colors">About Course</a>
+                <a href="#curriculum" class="hover:text-brand-500 transition-colors">Curriculum</a>
+                <a href="#mentors" class="hover:text-brand-500 transition-colors">Mentors</a>
+                <a href="#testimonials" class="hover:text-brand-500 transition-colors">Testimonials</a>
+                <a href="#contact" class="hover:text-brand-500 transition-colors">Contact</a>
+            </nav>
+
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#contact"
+                    class="bg-brand-600 hover:bg-brand-500 text-slate-950 font-semibold px-5 py-2.5 rounded-xl transition-all duration-200 transform hover:-translate-y-0.5 shadow-lg shadow-brand-600/30 text-sm">
+                    Enroll Now <i class="fa-solid fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white focus:outline-none p-2"
+                aria-label="Toggle menu">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-6 py-6 space-y-4">
+            <a href="#about" class="block text-slate-300 hover:text-brand-500 font-medium py-2">About Course</a>
+            <a href="#curriculum" class="block text-slate-300 hover:text-brand-500 font-medium py-2">Curriculum</a>
+            <a href="#mentors" class="block text-slate-300 hover:text-brand-500 font-medium py-2">Mentors</a>
+            <a href="#testimonials" class="block text-slate-300 hover:text-brand-500 font-medium py-2">Testimonials</a>
+            <a href="#contact" class="block text-slate-300 hover:text-brand-500 font-medium py-2">Contact</a>
+            <a href="#contact"
+                class="block text-center bg-brand-600 text-slate-950 font-semibold py-3 rounded-xl shadow-lg mt-4">
+                Enroll Now
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-24 md:pt-20 md:pb-32 overflow-hidden">
+        <!-- Background Ambient Glows -->
+        <div
+            class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-500/10 rounded-full blur-[120px] -z-10">
+        </div>
+        <div class="absolute top-1/3 right-10 w-[300px] h-[300px] bg-sky-500/10 rounded-full blur-[100px] -z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Hero Content -->
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div
+                        class="inline-flex items-center space-x-2 bg-slate-800/80 border border-slate-700/60 rounded-full px-4 py-1.5 text-xs font-mono text-brand-400">
+                        <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                        <span>Enrollment Open for Spring 2026 Batch</span>
+                    </div>
+
+                    <h1
+                        class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
+                        Welcome to <span class="gradient-text">Sawriya Trading Academy</span>
+                    </h1>
+
+                    <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Transition from complete beginner to systematic trader. Learn price action strategy, risk
+                        management discipline, and market structure from experienced trading mentors.
+                    </p>
+
+                    <!-- Key Stats Bar -->
+                    <div class="grid grid-cols-3 gap-4 pt-4 border-t border-slate-800/80 max-w-xl mx-auto lg:mx-0">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-bold font-mono text-white">94%</div>
+                            <div class="text-xs text-slate-400 mt-1">Completion Rate</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-bold font-mono text-white">12 Wks</div>
+                            <div class="text-xs text-slate-400 mt-1">Live Mentorship</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-bold font-mono text-white">4.9/5</div>
+                            <div class="text-xs text-slate-400 mt-1">Student Rating</div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#curriculum"
+                            class="w-full sm:w-auto text-center bg-brand-600 hover:bg-brand-500 text-slate-950 font-bold px-8 py-4 rounded-xl shadow-lg shadow-brand-500/25 transition-all transform hover:-translate-y-0.5">
+                            Explore Curriculum
+                        </a>
+                        <a href="#contact"
+                            class="w-full sm:w-auto text-center border border-slate-700 hover:border-slate-500 text-slate-200 font-semibold px-8 py-4 rounded-xl hover:bg-slate-800/50 transition-all flex items-center justify-center">
+                            <i class="fa-solid fa-graduation-cap text-brand-400 mr-2"></i> Enroll Today
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Hero Feature Card: Live Trading Preview Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-brand-card border border-slate-800 rounded-2xl p-6 shadow-2xl relative glow-effect">
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-lg font-bold text-white font-mono">NIFTY 50</span>
+                                <span
+                                    class="bg-brand-500/10 text-brand-400 border border-brand-500/20 text-xs px-2.5 py-0.5 rounded-full font-mono">Bullish
+                                    Signal</span>
+                            </div>
+                            <span class="text-xs font-mono text-slate-400">1H Timeframe</span>
+                        </div>
+
+                        <!-- Simulated Chart Preview -->
+                        <div class="py-6 space-y-4">
+                            <div
+                                class="h-44 w-full relative flex items-end space-x-2 pt-6 px-2 bg-slate-900/60 rounded-xl border border-slate-800/80">
+                                <!-- Candle 1 -->
+                                <div class="flex-1 flex flex-col items-center h-[40%] group relative">
+                                    <div class="w-0.5 bg-red-400 h-full"></div>
+                                    <div class="w-full bg-red-500/80 rounded-sm absolute top-2 bottom-2"></div>
+                                </div>
+                                <!-- Candle 2 -->
+                                <div class="flex-1 flex flex-col items-center h-[65%] group relative">
+                                    <div class="w-0.5 bg-brand-400 h-full"></div>
+                                    <div class="w-full bg-brand-500/80 rounded-sm absolute top-1 bottom-3"></div>
+                                </div>
+                                <!-- Candle 3 -->
+                                <div class="flex-1 flex flex-col items-center h-[50%] group relative">
+                                    <div class="w-0.5 bg-red-400 h-full"></div>
+                                    <div class="w-full bg-red-500/80 rounded-sm absolute top-3 bottom-1"></div>
+                                </div>
+                                <!-- Candle 4 -->
+                                <div class="flex-1 flex flex-col items-center h-[85%] group relative">
+                                    <div class="w-0.5 bg-brand-400 h-full"></div>
+                                    <div class="w-full bg-brand-500/80 rounded-sm absolute top-0 bottom-4"></div>
+                                </div>
+                                <!-- Candle 5 -->
+                                <div class="flex-1 flex flex-col items-center h-[95%] group relative">
+                                    <div class="w-0.5 bg-brand-400 h-full"></div>
+                                    <div class="w-full bg-brand-500/80 rounded-sm absolute top-0 bottom-1"></div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-3 text-xs font-mono">
+                                <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-800">
+                                    <div class="text-slate-500">Target Entry</div>
+                                    <div class="text-white font-bold text-sm">₹22,400.00</div>
+                                </div>
+                                <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-800">
+                                    <div class="text-slate-500">Risk/Reward</div>
+                                    <div class="text-brand-400 font-bold text-sm">1 : 3.5 Ratio</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="p-4 bg-slate-900/40 rounded-xl border border-slate-800/60 flex items-center justify-between text-xs text-slate-400">
+                            <span class="flex items-center"><i
+                                    class="fa-solid fa-graduation-cap text-brand-500 mr-2"></i> Covered in Module
+                                4</span>
+                            <span class="text-slate-300 font-semibold">Risk Engine Setup</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About The Course Section -->
+    <section id="about" class="py-20 bg-slate-900/50 border-y border-slate-800/60 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-mono text-brand-500 uppercase tracking-widest mb-3">Course Specification</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Everything You Need To Master Trading</h3>
+                <p class="text-slate-400 mt-4 text-base">Designed for actionable learning with structured progression
+                    from core mechanics to advanced execution at Sawriya Trading Academy.</p>
+            </div>
+
+            <!-- 4 Key Pillars Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div
+                    class="bg-brand-card p-6 rounded-2xl border border-slate-800 hover:border-brand-500/50 transition-all duration-300">
+                    <div
+                        class="w-12 h-12 bg-brand-500/10 text-brand-400 rounded-xl flex items-center justify-center mb-5 text-xl">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">Duration & Schedule</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-3">12 Intensive Weeks with 48+ Hours of Live
+                        Trading Workshops & Q&A.</p>
+                    <span class="text-xs font-mono text-brand-400 bg-brand-500/10 px-2.5 py-1 rounded-md">Flexible
+                        Weekend Sessions</span>
+                </div>
+
+                <div
+                    class="bg-brand-card p-6 rounded-2xl border border-slate-800 hover:border-brand-500/50 transition-all duration-300">
+                    <div
+                        class="w-12 h-12 bg-sky-500/10 text-sky-400 rounded-xl flex items-center justify-center mb-5 text-xl">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">Multi-Asset Coverage</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-3">Master Equities, Forex, Crypto, and Options
+                        with standardized methodology.</p>
+                    <span class="text-xs font-mono text-sky-400 bg-sky-500/10 px-2.5 py-1 rounded-md">Stocks • Crypto •
+                        Forex</span>
+                </div>
+
+                <div
+                    class="bg-brand-card p-6 rounded-2xl border border-slate-800 hover:border-brand-500/50 transition-all duration-300">
+                    <div
+                        class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center mb-5 text-xl">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">Risk First Mentality</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-3">Learn capital protection rules, portfolio
+                        sizing, and draw-down defense.</p>
+                    <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md">Capital
+                        Protection</span>
+                </div>
+
+                <div
+                    class="bg-brand-card p-6 rounded-2xl border border-slate-800 hover:border-brand-500/50 transition-all duration-300">
+                    <div
+                        class="w-12 h-12 bg-purple-500/10 text-purple-400 rounded-xl flex items-center justify-center mb-5 text-xl">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">1-on-1 Mentorship</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-3">Direct feedback on your personal trade log
+                        from senior traders twice weekly.</p>
+                    <span class="text-xs font-mono text-purple-400 bg-purple-500/10 px-2.5 py-1 rounded-md">Private
+                        Trade Reviews</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Curriculum Section -->
+    <section id="curriculum" class="py-24">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-mono text-brand-500 uppercase tracking-widest mb-3">Syllabus Breakdown</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">12-Week Master Curriculum</h3>
+                <p class="text-slate-400 mt-4">Structured into 4 core phases designed to build solid execution
+                    capabilities step-by-step.</p>
+            </div>
+
+            <!-- Accordion / Module List -->
+            <div class="space-y-4" id="curriculum-accordion">
+                <!-- Module 1 -->
+                <div
+                    class="bg-brand-card border border-slate-800 rounded-2xl overflow-hidden transition-all duration-200">
+                    <button
+                        class="w-full p-6 text-left flex items-center justify-between focus:outline-none accordion-header">
+                        <div class="flex items-center space-x-4">
+                            <span
+                                class="w-10 h-10 rounded-xl bg-slate-800 text-brand-400 font-mono font-bold flex items-center justify-center border border-slate-700">01</span>
+                            <div>
+                                <h4 class="text-lg font-bold text-white">Foundations of Financial Markets & Mechanics
+                                </h4>
+                                <span class="text-xs text-slate-400 font-mono">Weeks 1 - 3 • 4 Topics</span>
+                            </div>
+                        </div>
+                        <i
+                            class="fa-solid fa-chevron-down text-slate-400 transform transition-transform duration-200"></i>
+                    </button>
+                    <div class="hidden px-6 pb-6 pt-2 border-t border-slate-800/60 text-slate-300 text-sm space-y-3">
+                        <ul class="space-y-2 list-disc list-inside text-slate-400">
+                            <li>Market Structure: Order books, Market Makers, Liquidity Pools</li>
+                            <li>Candlestick Psychology & Dynamic Price Action</li>
+                            <li>Order Types & Execution: Limit, Market, Stop-Loss, OCO</li>
+                            <li>Setting up Professional Trading Terminals & Charting Software</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Module 2 -->
+                <div
+                    class="bg-brand-card border border-slate-800 rounded-2xl overflow-hidden transition-all duration-200">
+                    <button
+                        class="w-full p-6 text-left flex items-center justify-between focus:outline-none accordion-header">
+                        <div class="flex items-center space-x-4">
+                            <span
+                                class="w-10 h-10 rounded-xl bg-slate-800 text-brand-400 font-mono font-bold flex items-center justify-center border border-slate-700">02</span>
+                            <div>
+                                <h4 class="text-lg font-bold text-white">Technical Analysis & Strategy Architecture</h4>
+                                <span class="text-xs text-slate-400 font-mono">Weeks 4 - 6 • 5 Topics</span>
+                            </div>
+                        </div>
+                        <i
+                            class="fa-solid fa-chevron-down text-slate-400 transform transition-transform duration-200"></i>
+                    </button>
+                    <div class="hidden px-6 pb-6 pt-2 border-t border-slate-800/60 text-slate-300 text-sm space-y-3">
+                        <ul class="space-y-2 list-disc list-inside text-slate-400">
+                            <li>Support, Resistance, and Key Pivot Zone Identification</li>
+                            <li>Trendline Channels & Volume Profile Analysis</li>
+                            <li>High-Probability Entry Patterns: Reversals, Breakouts, Contractions</li>
+                            <li>Indicator Integration (RMA, MACD, VWAP) without chart clutter</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Module 3 -->
+                <div
+                    class="bg-brand-card border border-slate-800 rounded-2xl overflow-hidden transition-all duration-200">
+                    <button
+                        class="w-full p-6 text-left flex items-center justify-between focus:outline-none accordion-header">
+                        <div class="flex items-center space-x-4">
+                            <span
+                                class="w-10 h-10 rounded-xl bg-slate-800 text-brand-400 font-mono font-bold flex items-center justify-center border border-slate-700">03</span>
+                            <div>
+                                <h4 class="text-lg font-bold text-white">Institutional Risk Management & Sizing</h4>
+                                <span class="text-xs text-slate-400 font-mono">Weeks 7 - 9 • 4 Topics</span>
+                            </div>
+                        </div>
+                        <i
+                            class="fa-solid fa-chevron-down text-slate-400 transform transition-transform duration-200"></i>
+                    </button>
+                    <div class="hidden px-6 pb-6 pt-2 border-t border-slate-800/60 text-slate-300 text-sm space-y-3">
+                        <ul class="space-y-2 list-disc list-inside text-slate-400">
+                            <li>Math of Risk: Calculating Expected Value & Win/Loss Ratios</li>
+                            <li>Dynamic Position Sizing & Portfolio Allocation Formulas</li>
+                            <li>Managing Drawdowns & Preserving Capital in Volatile Regimes</li>
+                            <li>Journaling Techniques & Operational Trade Audit Templates</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Module 4 -->
+                <div
+                    class="bg-brand-card border border-slate-800 rounded-2xl overflow-hidden transition-all duration-200">
+                    <button
+                        class="w-full p-6 text-left flex items-center justify-between focus:outline-none accordion-header">
+                        <div class="flex items-center space-x-4">
+                            <span
+                                class="w-10 h-10 rounded-xl bg-slate-800 text-brand-400 font-mono font-bold flex items-center justify-center border border-slate-700">04</span>
+                            <div>
+                                <h4 class="text-lg font-bold text-white">Trading Psychology & Live Execution Lab</h4>
+                                <span class="text-xs text-slate-400 font-mono">Weeks 10 - 12 • Live Trading</span>
+                            </div>
+                        </div>
+                        <i
+                            class="fa-solid fa-chevron-down text-slate-400 transform transition-transform duration-200"></i>
+                    </button>
+                    <div class="hidden px-6 pb-6 pt-2 border-t border-slate-800/60 text-slate-300 text-sm space-y-3">
+                        <ul class="space-y-2 list-disc list-inside text-slate-400">
+                            <li>Overcoming FOMO, Revenge Trading & Discipline Pitfalls</li>
+                            <li>Live Trading Sessions with Lead Instructors during Market Hours</li>
+                            <li>Final Evaluation & Strategy Defense Presentation</li>
+                            <li>Graduate Prop Trading Fund Evaluation Access</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentors & Instructors Section -->
+    <section id="mentors" class="py-20 bg-slate-900/40 border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-mono text-brand-500 uppercase tracking-widest mb-3">Expert Guidance</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Learn From Seasoned Practitioners</h3>
+                <p class="text-slate-400 mt-4">Our mentors bring decades of institutional trading desk experience to
+                    Sawriya Trading Academy.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Mentor 1 -->
+                <div
+                    class="bg-brand-card border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-700 transition-all group">
+                    <div class="p-6 text-center">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=300&h=300"
+                            alt="Marcus Vance"
+                            class="w-28 h-28 rounded-full mx-auto mb-4 object-cover border-2 border-brand-500/40 group-hover:scale-105 transition-transform duration-300"
+                            onerror="this.src='https://placehold.co/300x300/131b2a/ffffff?text=MV'">
+                        <h4 class="text-xl font-bold text-white">Marcus Vance</h4>
+                        <div class="text-xs font-mono text-brand-400 mt-1">Lead Equity Strategist</div>
+                        <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+                            Former Quant Desk Head at Manhattan Capital with 14+ years managing multi-asset momentum
+                            portfolios.
+                        </p>
+                        <div
+                            class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-center space-x-4 text-xs font-mono text-slate-400">
+                            <span><i class="fa-solid fa-chart-column text-brand-500 mr-1"></i> Equities & Options</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor 2 -->
+                <div
+                    class="bg-brand-card border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-700 transition-all group">
+                    <div class="p-6 text-center">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300&h=300"
+                            alt="Elena Rostova"
+                            class="w-28 h-28 rounded-full mx-auto mb-4 object-cover border-2 border-brand-500/40 group-hover:scale-105 transition-transform duration-300"
+                            onerror="this.src='https://placehold.co/300x300/131b2a/ffffff?text=ER'">
+                        <h4 class="text-xl font-bold text-white">Elena Rostova</h4>
+                        <div class="text-xs font-mono text-brand-400 mt-1">Forex & Macro Analyst</div>
+                        <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+                            Ex-Currency Strategist specialized in macroeconomic policy catalysts, liquidity cycles, and
+                            G10 currencies.
+                        </p>
+                        <div
+                            class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-center space-x-4 text-xs font-mono text-slate-400">
+                            <span><i class="fa-solid fa-globe text-brand-500 mr-1"></i> Forex & Macro</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor 3 -->
+                <div
+                    class="bg-brand-card border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-700 transition-all group">
+                    <div class="p-6 text-center">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=300&h=300"
+                            alt="David Chen"
+                            class="w-28 h-28 rounded-full mx-auto mb-4 object-cover border-2 border-brand-500/40 group-hover:scale-105 transition-transform duration-300"
+                            onerror="this.src='https://placehold.co/300x300/131b2a/ffffff?text=DC'">
+                        <h4 class="text-xl font-bold text-white">David Chen</h4>
+                        <div class="text-xs font-mono text-brand-400 mt-1">Crypto & Derivatives Specialist</div>
+                        <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+                            Proprietary trader focused on digital asset order flow dynamics, delta-neutral strategies,
+                            and market microstructure.
+                        </p>
+                        <div
+                            class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-center space-x-4 text-xs font-mono text-slate-400">
+                            <span><i class="fa-solid fa-bitcoin-sign text-brand-500 mr-1"></i> Crypto & Futures</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-slate-900/50 border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-mono text-brand-500 uppercase tracking-widest mb-3">Student Feedback</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">What Our Alumni Say</h3>
+                <p class="text-slate-400 mt-4">Real stories from traders who transformed their performance after taking
+                    Sawriya Trading Academy courses.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-brand-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 space-x-1 mb-4 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed italic">
+                            "Before Sawriya Trading Academy, I was constantly over-leveraging and blowing up accounts.
+                            The risk engine module completely altered my mindset. I'm now trading consistently!"
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center space-x-3">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150&h=150"
+                            alt="Sarah J." class="w-10 h-10 rounded-full object-cover"
+                            onerror="this.src='https://placehold.co/150x150/131b2a/ffffff?text=SJ'">
+                        <div>
+                            <div class="text-sm font-bold text-white">Sarah Jenkins</div>
+                            <div class="text-xs text-slate-400 font-mono">Full-Time Forex Trader</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-brand-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 space-x-1 mb-4 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed italic">
+                            "The live trading sessions with Marcus were worth 10x the course cost alone. Watching how
+                            professionals react to live market news in real-time is invaluable."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center space-x-3">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150"
+                            alt="Alex M." class="w-10 h-10 rounded-full object-cover"
+                            onerror="this.src='https://placehold.co/150x150/131b2a/ffffff?text=AM'">
+                        <div>
+                            <div class="text-sm font-bold text-white">Alex Mercer</div>
+                            <div class="text-xs text-slate-400 font-mono">Swing Trader</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-brand-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 space-x-1 mb-4 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed italic">
+                            "Extremely structured curriculum. No fluff, no get-rich-quick BS—just mechanical execution,
+                            probability, and rigorous risk control."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center space-x-3">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150&h=150"
+                            alt="Rajiv K." class="w-10 h-10 rounded-full object-cover"
+                            onerror="this.src='https://placehold.co/150x150/131b2a/ffffff?text=RK'">
+                        <div>
+                            <div class="text-sm font-bold text-white">Rajiv Kapoor</div>
+                            <div class="text-xs text-slate-400 font-mono">Crypto Derivatives Analyst</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacts & Enrollment Form Section -->
+    <section id="contact" class="py-24 border-t border-slate-800/60 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                <!-- Contact Details -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <h2 class="text-xs font-mono text-brand-500 uppercase tracking-widest mb-3">Get In Touch</h2>
+                        <h3 class="text-3xl font-extrabold text-white">Start Your Trading Journey</h3>
+                        <p class="text-slate-400 mt-4 text-sm leading-relaxed">
+                            Have questions about batch start dates, prerequisites, or corporate trading programs? Our
+                            admissions desk is available 24/5.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="w-10 h-10 bg-brand-500/10 text-brand-400 rounded-xl flex items-center justify-center shrink-0 border border-brand-500/20">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Headquarters</h4>
+                                <p class="text-slate-400 text-xs mt-1">100 Wall Street, Floor 18, New York, NY 10005</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="w-10 h-10 bg-brand-500/10 text-brand-400 rounded-xl flex items-center justify-center shrink-0 border border-brand-500/20">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Email Us</h4>
+                                <p class="text-slate-400 text-xs mt-1">admissions@sawriyatrading.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="w-10 h-10 bg-brand-500/10 text-brand-400 rounded-xl flex items-center justify-center shrink-0 border border-brand-500/20">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Direct Line</h4>
+                                <p class="text-slate-400 text-xs mt-1">+1 (800) 555-SAWRIYA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enrollment & Inquiry Form -->
+                <div class="lg:col-span-7 bg-brand-card p-8 rounded-3xl border border-slate-800 shadow-xl">
+                    <form id="enrollment-form" class="space-y-6">
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-mono text-slate-300 mb-2">Full Name *</label>
+                                <input type="text" required placeholder="John Doe"
+                                    class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-mono text-slate-300 mb-2">Email Address *</label>
+                                <input type="email" required placeholder="john@example.com"
+                                    class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-mono text-slate-300 mb-2">Preferred Asset
+                                    Market</label>
+                                <select
+                                    class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors">
+                                    <option>Stocks & Equities</option>
+                                    <option>Crypto Derivatives</option>
+                                    <option>Forex / FX Currencies</option>
+                                    <option>Options Trading</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-mono text-slate-300 mb-2">Experience Level</label>
+                                <select
+                                    class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors">
+                                    <option>Complete Beginner</option>
+                                    <option>Intermediate (1-2 yrs)</option>
+                                    <option>Advanced / Prop Seeking</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-mono text-slate-300 mb-2">Message or Questions</label>
+                            <textarea rows="4" placeholder="Tell us about your trading goals..."
+                                class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-brand-600 hover:bg-brand-500 text-slate-950 font-bold py-4 rounded-xl transition-all shadow-lg shadow-brand-500/20 text-sm">
+                            Submit Course Application <i class="fa-solid fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+
+                    <!-- Success Notification Box -->
+                    <div id="form-success"
+                        class="hidden mt-4 p-4 bg-brand-500/10 border border-brand-500/30 rounded-xl text-center text-brand-400 text-sm">
+                        <i class="fa-solid fa-circle-check text-lg mb-1 block"></i>
+                        Application received! An admissions advisor will reach out within 24 hours.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800/80 py-12 text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <div class="flex items-center space-x-3">
+                    <div
+                        class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-slate-950 font-bold">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <span class="text-white font-bold text-base">Sawriya Trading Academy</span>
+                </div>
+                <div class="flex space-x-6 text-slate-400">
+                    <a href="#" class="hover:text-brand-400"><i class="fa-brands fa-twitter text-lg"></i></a>
+                    <a href="#" class="hover:text-brand-400"><i class="fa-brands fa-youtube text-lg"></i></a>
+                    <a href="#" class="hover:text-brand-400"><i class="fa-brands fa-discord text-lg"></i></a>
+                    <a href="#" class="hover:text-brand-400"><i class="fa-brands fa-telegram text-lg"></i></a>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-slate-900 pt-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
+                <p>&copy; 2026 Sawriya Trading Academy Inc. All rights reserved.</p>
+                <div class="space-x-4">
+                    <a href="#" class="hover:underline">Risk Disclosure</a>
+                    <a href="#" class="hover:underline">Privacy Policy</a>
+                    <a href="#" class="hover:underline">Terms of Service</a>
+                </div>
+            </div>
+
+            <div class="text-[10px] leading-relaxed text-slate-600">
+                <strong>Risk Disclaimer:</strong> Trading financial instruments carries a high level of risk and may not
+                be suitable for all investors. Past performance is not indicative of future results. Content provided is
+                strictly for educational purposes and should not be construed as investment advice.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Curriculum Accordion Handler
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('.fa-chevron-down');
+
+                // Toggle clicked module
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Form Submit Handler
+        const form = document.getElementById('enrollment-form');
+        const successMsg = document.getElementById('form-success');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            successMsg.classList.remove('hidden');
+            form.reset();
+            setTimeout(() => {
+                successMsg.classList.add('hidden');
+            }, 5000);
+        });
+    </script>
+</body>
+
+</html>
