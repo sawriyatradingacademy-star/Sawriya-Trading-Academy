@@ -1,0 +1,32 @@
+export const mentorsList = [
+  {
+    id: 'marcus-vance',
+    name: 'Marcus Vance',
+    role: 'Lead Equity Strategist',
+    bio: 'Former Quant Desk Head at Manhattan Capital with 14+ years managing multi-asset momentum portfolios.',
+    tag: 'Equities & Options',
+    icon: 'fa-solid fa-chart-column',
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=300&h=300',
+    fallbackInitials: 'MV',
+  },
+  {
+    id: 'elena-rostova',
+    name: 'Elena Rostova',
+    role: 'Forex & Macro Analyst',
+    bio: 'Ex-Currency Strategist specialized in macroeconomic policy catalysts, liquidity cycles, and G10 currencies.',
+    tag: 'Forex & Macro',
+    icon: 'fa-solid fa-globe',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300&h=300',
+    fallbackInitials: 'ER',
+  },
+  {
+    id: 'david-chen',
+    name: 'David Chen',
+    role: 'Crypto & Derivatives Specialist',
+    bio: 'Proprietary trader focused on digital asset order flow dynamics, delta-neutral strategies, and market microstructure.',
+    tag: 'Crypto & Futures',
+    icon: 'fa-solid fa-bitcoin-sign',
+    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=300&h=300',
+    fallbackInitials: 'DC',
+  },
+]

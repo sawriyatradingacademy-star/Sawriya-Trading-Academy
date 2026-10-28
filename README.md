@@ -1,16 +1,53 @@
-# React + Vite
+# Sawriya Trading Academy - React Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern, institutional-grade React trading academy web application converted from `demo.html` into a modular, component-driven architecture.
 
-Currently, two official plugins are available:
+## 🚀 Architecture & File Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```
+src/
+├── components/
+│   ├── layout/
+│   │   ├── MarketTicker.jsx      # Infinite scrolling market watch marquee
+│   │   ├── Navbar.jsx            # Sticky glassmorphic navigation header
+│   │   └── Footer.jsx            # Regulatory disclaimer, social links, back-to-top
+│   ├── sections/
+│   │   ├── HeroSection.jsx       # Hero with key stats & CTA actions
+│   │   ├── LiveTradingPreview.jsx# Interactive candlestick visualizer & asset setups
+│   │   ├── AboutSection.jsx      # 4 core institutional pillars
+│   │   ├── CurriculumSection.jsx # 12-week syllabus accordion with expand/collapse
+│   │   ├── MentorsSection.jsx    # Practitioner bios with fallback avatar support
+│   │   ├── TestimonialsSection.jsx# 5-star alumni student feedback
+│   │   ├── FaqSection.jsx        # Interactive FAQ accordion
+│   │   ├── ContactSection.jsx    # Headquarters details & inquiry section
+│   │   └── EnrollmentForm.jsx    # Validated course application form with loading & success state
+│   └── ui/
+│       ├── SectionHeader.jsx     # Reusable section title & badge component
+│       └── EnrollModal.jsx       # Modal dialog for instant enrollment
+├── data/
+│   ├── marketData.js             # Stock, forex, and crypto index feeds
+│   ├── featuresData.js           # Course specification pillars
+│   ├── curriculumData.js         # 12-week module topics and breakdown
+│   ├── mentorsData.js            # Mentor credentials and biographies
+│   ├── testimonialsData.js       # Student reviews and ratings
+│   └── faqData.js                # Frequently asked questions
+├── App.jsx                       # Root application layout
+├── index.css                     # Design tokens, glow effects, custom scrollbar
+└── main.jsx                      # React 19 entrypoint
+```
 
-## React Compiler
+## ✨ Features Added During Migration
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Component-Driven Modular Architecture**: Separated single monolithic HTML file into structured, reusable React components and decoupled data files.
+- **Interactive Candlestick Chart**: Switch between `NIFTY 50`, `BANK NIFTY`, and `BTC/USD` setups with real Open/High/Low/Close candlestick tooltips on hover.
+- **Curriculum Accordion with Global Controls**: Expand/collapse individual modules or use the "Expand All" / "Collapse All" triggers.
+- **Controlled Enrollment Form**: Real-time form validation, submission simulation, reset capability, and success banner feedback.
+- **Modal Popup + In-Page Enrollment**: Accessible via "Enroll Now" header button or direct on-page form.
+- **Resilient Image Handling**: Custom image error fallback mechanism for mentor portraits and testimonials.
+- **Infinite Marquee Ticker**: CSS keyframe ticker with pause-on-hover interaction.
 
-## Expanding the Oxlint configuration
+## 🛠️ Development
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```bash
+npm run dev
+```

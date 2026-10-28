@@ -1,0 +1,55 @@
+export const curriculumModules = [
+  {
+    id: 1,
+    number: '01',
+    title: 'Foundations of Financial Markets & Mechanics',
+    duration: 'Weeks 1 - 3',
+    topicCount: '4 Topics',
+    topics: [
+      'Market Structure: Order books, Market Makers, Liquidity Pools',
+      'Candlestick Psychology & Dynamic Price Action',
+      'Order Types & Execution: Limit, Market, Stop-Loss, OCO',
+      'Setting up Professional Trading Terminals & Charting Software',
+    ],
+  },
+  {
+    id: 2,
+    number: '02',
+    title: 'Technical Analysis & Strategy Architecture',
+    duration: 'Weeks 4 - 6',
+    topicCount: '5 Topics',
+    topics: [
+      'Support, Resistance, and Key Pivot Zone Identification',
+      'Trendline Channels & Volume Profile Analysis',
+      'High-Probability Entry Patterns: Reversals, Breakouts, Contractions',
+      'Indicator Integration (RMA, MACD, VWAP) without chart clutter',
+      'Multi-timeframe Confluence & Top-down Analysis Framework',
+    ],
+  },
+  {
+    id: 3,
+    number: '03',
+    title: 'Institutional Risk Management & Sizing',
+    duration: 'Weeks 7 - 9',
+    topicCount: '4 Topics',
+    topics: [
+      'Math of Risk: Calculating Expected Value & Win/Loss Ratios',
+      'Dynamic Position Sizing & Portfolio Allocation Formulas',
+      'Managing Drawdowns & Preserving Capital in Volatile Regimes',
+      'Journaling Techniques & Operational Trade Audit Templates',
+    ],
+  },
+  {
+    id: 4,
+    number: '04',
+    title: 'Trading Psychology & Live Execution Lab',
+    duration: 'Weeks 10 - 12',
+    topicCount: 'Live Trading',
+    topics: [
+      'Overcoming FOMO, Revenge Trading & Discipline Pitfalls',
+      'Live Trading Sessions with Lead Instructors during Market Hours',
+      'Final Evaluation & Strategy Defense Presentation',
+      'Graduate Prop Trading Fund Evaluation Access',
+    ],
+  },
+]

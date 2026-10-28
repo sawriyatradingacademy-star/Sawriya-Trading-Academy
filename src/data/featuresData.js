@@ -1,0 +1,38 @@
+export const courseFeatures = [
+  {
+    id: 'schedule',
+    title: 'Duration & Schedule',
+    description: '12 Intensive Weeks with 48+ Hours of Live Trading Workshops & Q&A.',
+    tag: 'Flexible Weekend Sessions',
+    tagColor: 'text-brand-400 bg-brand-500/10 border-brand-500/20',
+    icon: 'fa-solid fa-clock',
+    iconColor: 'bg-brand-500/10 text-brand-400',
+  },
+  {
+    id: 'assets',
+    title: 'Multi-Asset Coverage',
+    description: 'Master Equities, Forex, Crypto, and Options with standardized methodology.',
+    tag: 'Stocks • Crypto • Forex',
+    tagColor: 'text-sky-400 bg-sky-500/10 border-sky-500/20',
+    icon: 'fa-solid fa-layer-group',
+    iconColor: 'bg-sky-500/10 text-sky-400',
+  },
+  {
+    id: 'risk',
+    title: 'Risk First Mentality',
+    description: 'Learn capital protection rules, portfolio sizing, and draw-down defense.',
+    tag: 'Capital Protection',
+    tagColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
+    icon: 'fa-solid fa-shield-halved',
+    iconColor: 'bg-emerald-500/10 text-emerald-400',
+  },
+  {
+    id: 'mentorship',
+    title: '1-on-1 Mentorship',
+    description: 'Direct feedback on your personal trade log from senior traders twice weekly.',
+    tag: 'Private Trade Reviews',
+    tagColor: 'text-purple-400 bg-purple-500/10 border-purple-500/20',
+    icon: 'fa-solid fa-users',
+    iconColor: 'bg-purple-500/10 text-purple-400',
+  },
+]
