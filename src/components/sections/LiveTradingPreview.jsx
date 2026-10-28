@@ -64,9 +64,9 @@ export default function LiveTradingPreview() {
   const setup = tradingSetups[activeTab]
 
   return (
-    <div className="bg-brand-card border border-slate-800 rounded-3xl p-6 sm:p-7 shadow-2xl relative glow-effect transition-all duration-300">
+    <div className="bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-7 shadow-xl relative glow-effect transition-all duration-300">
       {/* Asset Switcher Tabs */}
-      <div className="flex items-center space-x-2 mb-5 pb-3 border-b border-slate-800/80 overflow-x-auto text-xs">
+      <div className="flex items-center space-x-2 mb-5 pb-3 border-b border-slate-100 overflow-x-auto text-xs">
         {Object.keys(tradingSetups).map((key) => {
           const item = tradingSetups[key]
           const isActive = activeTab === key
@@ -74,10 +74,10 @@ export default function LiveTradingPreview() {
             <button
               key={key}
               onClick={() => setActiveTab(key)}
-              className={`px-3 py-1.5 rounded-lg font-mono font-medium transition-all ${
+              className={`px-3 py-1.5 rounded-lg font-mono font-medium transition-all cursor-pointer ${
                 isActive
-                  ? 'bg-brand-600 text-slate-950 font-bold shadow-md shadow-brand-600/30'
-                  : 'bg-slate-900/80 text-slate-400 hover:text-white border border-slate-800'
+                  ? 'bg-brand-600 text-white font-bold shadow-sm shadow-brand-600/30'
+                  : 'bg-slate-100 text-slate-600 hover:text-slate-900 border border-slate-200/80 hover:bg-slate-200/60'
               }`}
             >
               {item.symbol}
@@ -87,24 +87,24 @@ export default function LiveTradingPreview() {
       </div>
 
       {/* Header Info */}
-      <div className="flex items-center justify-between pb-4 border-b border-slate-800/80">
+      <div className="flex items-center justify-between pb-4 border-b border-slate-100">
         <div className="flex items-center space-x-3">
-          <span className="text-xl font-bold text-white font-mono tracking-tight">
+          <span className="text-xl font-bold text-slate-900 font-mono tracking-tight">
             {setup.symbol}
           </span>
-          <span className="bg-brand-500/10 text-brand-400 border border-brand-500/20 text-xs px-2.5 py-0.5 rounded-full font-mono flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse"></span>
+          <span className="bg-brand-50 text-brand-700 border border-brand-200 text-xs px-2.5 py-0.5 rounded-full font-mono flex items-center gap-1.5 font-semibold">
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-500 animate-pulse"></span>
             {setup.signal}
           </span>
         </div>
-        <span className="text-xs font-mono text-slate-400 bg-slate-900/60 px-2 py-1 rounded border border-slate-800">
+        <span className="text-xs font-mono text-slate-600 bg-slate-100 px-2.5 py-1 rounded-lg border border-slate-200 font-medium">
           {setup.timeframe}
         </span>
       </div>
 
       {/* Simulated Candlestick Chart Preview */}
       <div className="py-6 space-y-4">
-        <div className="h-44 w-full relative flex items-end space-x-3 sm:space-x-4 pt-6 px-4 bg-slate-900/80 rounded-2xl border border-slate-800/80">
+        <div className="h-44 w-full relative flex items-end space-x-3 sm:space-x-4 pt-6 px-4 bg-slate-50/90 rounded-2xl border border-slate-200/80">
           {setup.candles.map((candle, idx) => (
             <div
               key={idx}
@@ -116,16 +116,16 @@ export default function LiveTradingPreview() {
               {/* Wick */}
               <div
                 className={`w-0.5 h-full ${
-                  candle.isUp ? 'bg-brand-400' : 'bg-rose-400'
+                  candle.isUp ? 'bg-emerald-500' : 'bg-rose-500'
                 } group-hover:scale-110 transition-transform`}
               ></div>
 
               {/* Body */}
               <div
-                className={`w-full rounded-sm absolute top-1 bottom-1 transition-all group-hover:brightness-125 ${
+                className={`w-full rounded-sm absolute top-1 bottom-1 transition-all group-hover:brightness-105 ${
                   candle.isUp
-                    ? 'bg-brand-500/85 border border-brand-400 shadow-sm shadow-brand-500/30'
-                    : 'bg-rose-500/85 border border-rose-400 shadow-sm shadow-rose-500/30'
+                    ? 'bg-emerald-500 border border-emerald-600 shadow-xs shadow-emerald-500/20'
+                    : 'bg-rose-500 border border-rose-600 shadow-xs shadow-rose-500/20'
                 }`}
               ></div>
             </div>
@@ -133,11 +133,11 @@ export default function LiveTradingPreview() {
 
           {/* Candle Hover Tooltip */}
           {hoveredCandle && (
-            <div className="absolute top-2 left-3 right-3 bg-slate-950/95 border border-brand-500/40 px-3 py-1.5 rounded-lg text-[11px] font-mono flex items-center justify-between text-slate-300 pointer-events-none shadow-xl">
+            <div className="absolute top-2 left-3 right-3 bg-slate-900 text-white border border-slate-700 px-3 py-1.5 rounded-lg text-[11px] font-mono flex items-center justify-between pointer-events-none shadow-xl">
               <span>O: {hoveredCandle.o}</span>
               <span>H: {hoveredCandle.h}</span>
               <span>L: {hoveredCandle.l}</span>
-              <span className={hoveredCandle.isUp ? 'text-brand-400 font-bold' : 'text-rose-400 font-bold'}>
+              <span className={hoveredCandle.isUp ? 'text-emerald-400 font-bold' : 'text-rose-400 font-bold'}>
                 C: {hoveredCandle.c}
               </span>
             </div>
@@ -146,30 +146,30 @@ export default function LiveTradingPreview() {
 
         {/* Target Metrics */}
         <div className="grid grid-cols-2 gap-3 text-xs font-mono">
-          <div className="bg-slate-900/90 p-3.5 rounded-xl border border-slate-800/80">
-            <div className="text-slate-400 flex items-center justify-between">
+          <div className="bg-slate-50/90 p-3.5 rounded-xl border border-slate-200/80">
+            <div className="text-slate-500 flex items-center justify-between">
               <span>Target Entry</span>
-              <i className="fa-solid fa-bullseye text-brand-400 text-[10px]"></i>
+              <i className="fa-solid fa-bullseye text-brand-600 text-[10px]"></i>
             </div>
-            <div className="text-white font-bold text-sm mt-1">{setup.targetEntry}</div>
+            <div className="text-slate-900 font-bold text-sm mt-1">{setup.targetEntry}</div>
           </div>
-          <div className="bg-slate-900/90 p-3.5 rounded-xl border border-slate-800/80">
-            <div className="text-slate-400 flex items-center justify-between">
+          <div className="bg-slate-50/90 p-3.5 rounded-xl border border-slate-200/80">
+            <div className="text-slate-500 flex items-center justify-between">
               <span>Risk/Reward</span>
-              <i className="fa-solid fa-scale-balanced text-brand-400 text-[10px]"></i>
+              <i className="fa-solid fa-scale-balanced text-brand-600 text-[10px]"></i>
             </div>
-            <div className="text-brand-400 font-bold text-sm mt-1">{setup.riskReward}</div>
+            <div className="text-brand-600 font-bold text-sm mt-1">{setup.riskReward}</div>
           </div>
         </div>
       </div>
 
       {/* Module Highlight */}
-      <div className="p-4 bg-slate-900/60 rounded-xl border border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+      <div className="p-4 bg-slate-50/90 rounded-xl border border-slate-200/80 flex items-center justify-between text-xs text-slate-600">
         <span className="flex items-center">
-          <i className="fa-solid fa-graduation-cap text-brand-400 mr-2 text-sm"></i>
+          <i className="fa-solid fa-graduation-cap text-brand-600 mr-2 text-sm"></i>
           {setup.moduleNote}
         </span>
-        <span className="text-slate-300 font-semibold font-mono text-[11px]">
+        <span className="text-slate-700 font-semibold font-mono text-[11px]">
           Verified Rule
         </span>
       </div>

@@ -6,7 +6,7 @@ export default function MarketTicker() {
 
   return (
     <div
-      className="bg-slate-900/90 border-b border-slate-800 text-xs py-2 px-4 ticker-wrap backdrop-blur-sm select-none"
+      className="bg-slate-50/95 border-b border-slate-200/90 text-xs py-2 px-4 ticker-wrap backdrop-blur-sm select-none"
       title="Live Global Market Watch"
     >
       <div className="ticker-move font-mono space-x-8 inline-flex items-center">
@@ -15,8 +15,8 @@ export default function MarketTicker() {
             key={`${item.symbol}-${index}`}
             className="inline-flex items-center space-x-2 transition-opacity hover:opacity-100 opacity-90"
           >
-            <strong className="text-slate-400 font-semibold">{item.symbol}</strong>
-            <span className="text-slate-200">{item.price}</span>
+            <strong className="text-slate-500 font-semibold">{item.symbol}</strong>
+            <span className="text-slate-900 font-medium">{item.price}</span>
             <span
               className={`inline-flex items-center space-x-1 font-bold ${
                 item.isUp ? 'market-up' : 'market-down'

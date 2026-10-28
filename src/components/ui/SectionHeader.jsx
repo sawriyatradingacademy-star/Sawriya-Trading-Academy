@@ -10,15 +10,15 @@ export default function SectionHeader({
   return (
     <div className={`max-w-3xl mb-16 ${alignmentClass}`}>
       {badge && (
-        <span className="inline-block text-xs font-mono font-semibold text-brand-500 uppercase tracking-widest mb-3 px-3 py-1 bg-brand-500/10 rounded-full border border-brand-500/20">
+        <span className="inline-block text-xs font-mono font-semibold text-brand-700 uppercase tracking-widest mb-3 px-3 py-1 bg-brand-50 rounded-full border border-brand-200/80 shadow-xs">
           {badge}
         </span>
       )}
-      <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+      <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
         {title}
       </h2>
       {subtitle && (
-        <p className="text-slate-400 mt-4 text-base sm:text-lg leading-relaxed">
+        <p className="text-slate-600 mt-4 text-base sm:text-lg leading-relaxed">
           {subtitle}
         </p>
       )}

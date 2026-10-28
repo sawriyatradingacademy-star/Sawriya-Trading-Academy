@@ -1,22 +1,23 @@
 @layer base {
   :root {
-    --brand-dark: #0b0f17;
-    --brand-card: #131b2a;
-    --brand-border: #1e293b;
-    --brand-primary: #22c55e;
+    --brand-bg: #ffffff;
+    --brand-card: #ffffff;
+    --brand-border: #e2e8f0;
+    --brand-primary: #059669;
   }
 
   html {
     scroll-behavior: smooth;
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #0b0f17;
+    background-color: #ffffff;
+    color: #0f172a;
   }
 
   body {
     margin: 0;
     padding: 0;
-    background-color: #0b0f17;
-    color: #e2e8f0;
+    background-color: #ffffff;
+    color: #0f172a;
     min-height: 100vh;
     overflow-x: hidden;
   }
@@ -29,38 +30,39 @@
   }
 }
 
-/* Custom Effects and Utility Classes */
+/* Custom Effects and Utility Classes for White Clean Theme */
 .glow-effect {
-  box-shadow: 0 0 35px -5px rgba(34, 197, 94, 0.22);
+  box-shadow: 0 10px 30px -5px rgba(5, 150, 105, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
 }
 
 .glow-card {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glow-card:hover {
-  box-shadow: 0 10px 30px -10px rgba(34, 197, 94, 0.25);
-  border-color: rgba(34, 197, 94, 0.4);
+  box-shadow: 0 12px 28px -6px rgba(5, 150, 105, 0.12), 0 4px 10px -2px rgba(0, 0, 0, 0.04);
+  border-color: rgba(5, 150, 105, 0.35);
+  transform: translateY(-2px);
 }
 
 .glass-nav {
-  background: rgba(11, 15, 23, 0.88);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #22c55e 0%, #38bdf8 100%);
+  background: linear-gradient(135deg, #059669 0%, #0284c7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .market-up {
-  color: #22c55e;
+  color: #059669;
 }
 
 .market-down {
-  color: #ef4444;
+  color: #dc2626;
 }
 
 .ticker-wrap {
@@ -86,21 +88,21 @@
   }
 }
 
-/* Custom Scrollbar */
+/* Light Theme Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0b0f17;
+  background: #f8fafc;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #cbd5e1;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #94a3b8;
 }
