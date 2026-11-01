@@ -1,0 +1,67 @@
+export const coursesList = [
+  {
+    id: 'foundation',
+    badge: 'Beginner Friendly',
+    badgeColor: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+    title: 'Stock Market Foundation',
+    subtitle: 'From Complete Beginner to Independent Chart Reader',
+    duration: '4 Weeks',
+    sessions: '16+ Hours Live',
+    level: 'Beginner',
+    tagline: 'Master price action, chart patterns, and eliminate beginner mistakes.',
+    description:
+      'Designed specifically for individuals with zero financial background. Learn the mechanics of the stock market, order placement, chart analysis, and how to identify high-probability swing and intraday setups without relying on confusing indicators.',
+    highlights: [
+      'Market Structure: NSE, BSE, Demat, and Order Types (Limit, Market, SL, SL-M)',
+      'Candlestick Psychology: Rejection wicks, momentum bars, and multi-timeframe confirmation',
+      'Support, Resistance & Dynamic Trendlines without lagging indicators',
+      'Basic Risk Management & 1% Rule to protect your initial capital',
+    ],
+    mode: 'Live Online + Recorded Access',
+    popular: false,
+  },
+  {
+    id: 'options-pro',
+    badge: 'Most Popular',
+    badgeColor: 'bg-brand-50 text-brand-700 border-brand-200',
+    title: 'OptionsPro Derivatives Mastery',
+    subtitle: 'Advanced F&O, Greeks & Institutional Hedging',
+    duration: '6 Weeks',
+    sessions: '28+ Hours Live',
+    level: 'Intermediate to Pro',
+    tagline: 'Trade Nifty & Bank Nifty options with data-backed statistical edge.',
+    description:
+      'Stop losing money as an unhedged option buyer. Decode Option Greeks, analyze Open Interest (OI) buildup, learn non-directional selling strategies (Strangles, Iron Condors), and build defined-risk hedging setups for weekly expiries.',
+    highlights: [
+      'Option Greeks Demystified: Delta, Theta decay, Gamma spikes, and Vega volatility',
+      'Open Interest (OI) & PCR (Put-Call Ratio) Data Analysis during live market hours',
+      'High Win-Rate Option Buying Setups vs. Statistical Option Selling strategies',
+      'Hedging & Risk Management: Spreads, Butterfly, and Expiry Day adjustments',
+    ],
+    mode: 'Live Online + Live Market Doubt Clearing',
+    popular: true,
+  },
+  {
+    id: 'master-trader',
+    badge: 'Comprehensive Flagship',
+    badgeColor: 'bg-blue-50 text-blue-700 border-blue-200',
+    title: 'Complete Master Trader Mentorship',
+    subtitle: 'Full Spectrum Multi-Asset Systematic Trading Program',
+    duration: '12 Weeks',
+    sessions: '50+ Hours Live + 60 Days Handholding',
+    level: 'All Levels (Beginner to Pro)',
+    tagline: 'Everything included: Equity, Options, Commodities, and Live Market Mentorship.',
+    description:
+      'Our complete flagship immersion. Includes the entire Foundation and Options curriculum plus Commodity (Gold/Crude Oil), Forex/Crypto market dynamics, institutional Smart Money Concepts (SMC), and 60 days of live market review sessions.',
+    highlights: [
+      'Full Foundation + OptionsPro + Commodity & Currency market coverage',
+      'Smart Money Concepts (SMC): Liquidity pools, order blocks, and market traps',
+      'Live Market Execution: Watch mentors trade real market conditions in real time',
+      'Personal Trade Journal Reviews: 1-on-1 feedback on your trade logs twice weekly',
+      'Lifetime Alumni Membership & Daily Pre-Market Strategy Briefings',
+    ],
+    mode: 'Hybrid (Live Zoom + Offline Center Access)',
+    popular: false,
+  },
+]
+

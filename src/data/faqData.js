@@ -1,22 +1,38 @@
-export const faqsList = [
+export const faqList = [
   {
-    question: 'Do I need prior trading experience to join?',
+    id: 1,
+    question: 'How do the 2 Free Live Demo Classes work?',
     answer:
-      'No prior experience is necessary. Module 1 starts from absolute market fundamentals, mechanics, and terminology before transitioning to advanced price action and execution.',
+      'You can register for 2 Free Live Demo Classes with just your name and WhatsApp number. These sessions are conducted during actual market hours via interactive Zoom. You will see our lead mentors perform real-time chart analysis, spot setups, and explain risk mechanics. There is zero obligation to enroll afterwards.',
   },
   {
-    question: 'What is the schedule for live sessions?',
+    id: 2,
+    question: 'I am a complete beginner with zero finance background. Can I join?',
     answer:
-      'Workshops occur every Saturday and Sunday from 10:00 AM to 12:00 PM EST. All live sessions are recorded in 4K and uploaded to your student portal within 2 hours.',
+      'Yes, absolutely! Over 65% of our successful students come from non-finance backgrounds (IT, engineering, doctors, students, homemakers, and businessmen). Our Stock Market Foundation course starts from the ground up: Demat setup, how orders work, understanding candlesticks, and systematic chart reading.',
   },
   {
-    question: 'How much capital do I need to start trading during the course?',
+    id: 3,
+    question: 'Do you provide stock tips, Telegram calls, or advisory services?',
     answer:
-      'We require all students to practice on paper trading / simulated accounts throughout the first 6 weeks. Real capital is not required until you have verified your trade execution and risk plan.',
+      'No. We have a strict ZERO-TIPS policy. We firmly believe relying on tips leads to financial disaster. Instead, we teach you institutional price action, statistical risk management, and the skills to analyze, select, and execute your own trades independently.',
   },
   {
-    question: 'Do you offer prop firm evaluation support?',
+    id: 4,
+    question: 'What if I miss a scheduled live class?',
     answer:
-      'Yes! Graduates who successfully pass our internal Strategy Defense presentation receive direct sponsorship and evaluation passes to our affiliated proprietary trading firms.',
+      'Every single live session is recorded in high definition and uploaded to your student portal within 2 hours of the class finishing. You have lifetime access to rewatch past class recordings, presentation notes, and trade checklists anytime at your convenience.',
+  },
+  {
+    id: 5,
+    question: 'Are the batches online or offline? What are the class timings?',
+    answer:
+      'We offer interactive Live Online batches (with live Q&A, audio interaction, and chat) as well as offline classroom batches at our academy center. We provide weekday evening batches (8:00 PM – 9:30 PM) for working professionals and weekend morning batches.',
+  },
+  {
+    id: 6,
+    question: 'Will I receive mentorship and doubt clearing after the course ends?',
+    answer:
+      'Yes! Enrollment includes lifetime access to our Sawriya Traders Alumni Community. You will receive daily pre-market analysis reports, participate in weekly weekend review sessions, and can directly clarify doubts with instructors.',
   },
 ]

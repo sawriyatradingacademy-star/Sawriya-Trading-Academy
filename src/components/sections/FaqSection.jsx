@@ -1,54 +1,89 @@
 import { useState } from 'react'
-import { faqsList } from '../../data/faqData'
+import { faqList } from '../../data/faqData'
+import { WHATSAPP_DEMO_URL, CALL_PHONE_NUMBER } from '../../data/constants'
 import SectionHeader from '../ui/SectionHeader'
 
 export default function FaqSection() {
-  const [openIndex, setOpenIndex] = useState(0)
+  const [openId, setOpenId] = useState(1) // Default first FAQ open
 
-  const toggleFaq = (index) => {
-    setOpenIndex(openIndex === index ? null : index)
+  const toggleFaq = (id) => {
+    setOpenId((prev) => (prev === id ? null : id))
   }
 
   return (
-    <section id="faq" className="py-24 bg-slate-50/60 border-t border-slate-200/80 relative">
+    <section id="faqs" className="py-20 md:py-28 bg-[#f8fafc] border-t border-slate-200/90 relative">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Frequently Asked"
-          title="Common Questions Answered"
-          subtitle="Everything you need to know about the enrollment process, course structure, and execution support."
+          badge="Frequently Asked Questions"
+          title="Got Questions? We Have Answers."
+          subtitle="Everything you need to know about our teaching methodology, batch schedules, and the 2 Free Live Demo Classes."
         />
 
-        <div className="space-y-4">
-          {faqsList.map((faq, index) => {
-            const isOpen = openIndex === index
+        <div className="space-y-3.5 mt-10">
+          {faqList.map((item) => {
+            const isOpen = openId === item.id
             return (
               <div
-                key={index}
-                className="bg-white border border-slate-200/90 rounded-2xl overflow-hidden transition-all duration-200 shadow-xs"
+                key={item.id}
+                className={`bg-white rounded-2xl border transition-all duration-200 overflow-hidden ${
+                  isOpen
+                    ? 'border-emerald-500/50 shadow-md shadow-emerald-500/5'
+                    : 'border-slate-200 hover:border-slate-300 shadow-xs'
+                }`}
               >
                 <button
-                  type="button"
-                  onClick={() => toggleFaq(index)}
-                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between focus:outline-none cursor-pointer"
+                  onClick={() => toggleFaq(item.id)}
+                  className="w-full text-left p-5 sm:p-6 flex items-center justify-between space-x-4 cursor-pointer focus:outline-none"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-base font-bold text-slate-900 pr-4">
-                    {faq.question}
+                  <span className="font-bold text-slate-900 text-sm sm:text-base">
+                    {item.question}
                   </span>
-                  <i
-                    className={`fa-solid fa-chevron-down text-slate-400 text-sm transform transition-transform duration-200 shrink-0 ${
-                      isOpen ? 'rotate-180 text-brand-600' : ''
+                  <div
+                    className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-xs transition-transform duration-200 ${
+                      isOpen
+                        ? 'bg-emerald-600 text-white rotate-180'
+                        : 'bg-slate-100 text-slate-500'
                     }`}
-                  ></i>
+                  >
+                    <i className="fa-solid fa-chevron-down"></i>
+                  </div>
                 </button>
+
                 {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 pt-3 border-t border-slate-100 text-slate-600 text-sm leading-relaxed bg-slate-50/30">
-                    {faq.answer}
+                  <div className="px-5 sm:px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                    {item.answer}
                   </div>
                 )}
               </div>
             )
           })}
+        </div>
+
+        {/* Still have questions banner */}
+        <div className="mt-10 text-center bg-white border border-slate-200 rounded-3xl p-8 shadow-xs">
+          <h4 className="font-bold text-slate-900 text-lg">Have more specific questions?</h4>
+          <p className="text-slate-600 text-xs sm:text-sm mt-1 max-w-lg mx-auto">
+            Book 2 Free Live Demo Classes and ask your questions directly to our instructors on WhatsApp.
+          </p>
+          <div className="mt-5 flex flex-wrap justify-center gap-3">
+            <a
+              href={WHATSAPP_DEMO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#16a34a] hover:bg-[#15803d] text-white font-black uppercase tracking-wider text-xs sm:text-sm px-6 py-3 rounded-xl transition-all shadow-sm flex items-center space-x-2"
+            >
+              <i className="fa-brands fa-whatsapp text-lg"></i>
+              <span>Book 2 Free Demo Classes</span>
+            </a>
+            <a
+              href={`tel:${CALL_PHONE_NUMBER.replace(/\s+/g, '')}`}
+              className="border border-slate-300 hover:border-slate-400 text-slate-800 font-semibold text-xs sm:text-sm px-6 py-3 rounded-xl transition-colors flex items-center space-x-2"
+            >
+              <i className="fa-solid fa-phone text-emerald-600"></i>
+              <span>Call Counselor</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
