@@ -1,4 +1,4 @@
-import { WHATSAPP_DEMO_URL, CALL_PHONE_NUMBER } from '../../data/constants'
+import { WHATSAPP_DEMO_URL, DISPLAY_PHONE } from '../../data/constants'
 
 export default function AnnouncementBar() {
   return (
@@ -18,10 +18,10 @@ export default function AnnouncementBar() {
         {/* Right CTA and contact info */}
         <div className="flex items-center space-x-4">
           <a
-            href={`tel:${CALL_PHONE_NUMBER.replace(/\s+/g, '')}`}
+            href={`tel:${DISPLAY_PHONE}`}
             className="hidden md:inline-flex items-center text-slate-300 font-mono text-[11px] hover:text-white"
           >
-            <i className="fa-solid fa-phone text-emerald-400 mr-1.5"></i> Helpline: {CALL_PHONE_NUMBER}
+            <i className="fa-solid fa-phone text-emerald-400 mr-1.5"></i> Helpline: {DISPLAY_PHONE}
           </a>
           <a
             href={WHATSAPP_DEMO_URL}

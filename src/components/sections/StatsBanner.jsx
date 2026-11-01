@@ -4,19 +4,19 @@ import { DemoPassIcon } from '../ui/Icons'
 export default function StatsBanner() {
   const stats = [
     {
-      number: '15,000+',
+      number: '5,000+',
       label: 'Students Mentored',
-      subtext: 'Across 28+ states & NRI learners',
+      subtext: 'Trained across live market batches',
     },
     {
-      number: '14+ Years',
+      number: '10 Years',
       label: 'Market Desk Experience',
       subtext: 'Through bull & bear market cycles',
     },
     {
-      number: '4.9 / 5.0',
-      label: 'Verified Academic Score',
-      subtext: 'Google Maps & Trustpilot reviews',
+      number: '3,000+',
+      label: 'Successful Careers',
+      subtext: 'Independent & disciplined traders',
     },
     {
       number: '2 Free',

@@ -3,7 +3,7 @@ import { WHATSAPP_DEMO_URL } from '../../data/constants'
 export default function HeroSection() {
   return (
     <section className="bg-white">
-      {/* High-Impact Split Hero Banner (recreating the Online Trading Academy institutional design) */}
+      {/* High-Impact Split Hero Banner (Online Trading Academy institutional layout) */}
       <div className="relative w-full bg-[#0a2356] overflow-hidden min-h-[460px] md:min-h-[520px] flex items-stretch">
         
         {/* Left Side: Deep Blue High-Tech Financial Chart Texture */}
@@ -26,13 +26,13 @@ export default function HeroSection() {
           </div>
 
           <div className="relative z-10 max-w-xl">
-            {/* Accreditation Badge */}
+            {/* Academy Badge */}
             <div className="inline-flex items-center space-x-2 bg-sky-950/80 border border-sky-400/30 rounded-full px-3.5 py-1 text-xs text-sky-200 mb-5 font-mono">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span>ISO 9001:2015 Accredited Academy</span>
+              <span>Sawriya Trading Academy • 10 Years Experience</span>
             </div>
 
-            {/* Bold Headline (Exact OTA Style) */}
+            {/* Bold Headline */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-black uppercase tracking-tight text-white leading-[1.08] mb-4">
               Trade With <br />
               Confidence, <br />
@@ -66,7 +66,7 @@ export default function HeroSection() {
 
             <div className="mt-6 text-xs text-sky-200/80 flex items-center space-x-2 font-mono">
               <i className="fa-solid fa-circle-check text-emerald-400"></i>
-              <span>No Credit Card Required • Instant Confirmation on WhatsApp</span>
+              <span>Live Market Analysis • Instant Confirmation on WhatsApp</span>
             </div>
           </div>
         </div>
@@ -91,44 +91,11 @@ export default function HeroSection() {
             {/* Photo caption badge in bottom corner */}
             <div className="absolute bottom-4 right-4 bg-slate-900/85 backdrop-blur-md text-white text-xs px-3.5 py-1.5 rounded-md font-mono border border-slate-700">
               <i className="fa-solid fa-users text-emerald-400 mr-2"></i>
-              <span>Live Classroom Batch • Trading Lab</span>
+              <span>Sawriya Trading Academy • Gurugram Center</span>
             </div>
           </div>
         </div>
 
-      </div>
-
-      {/* Trustpilot-Style Social Proof Strip Directly Below Hero (Exact OTA Benchmark) */}
-      <div className="border-b border-slate-200 bg-white py-6">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-sm sm:text-base md:text-lg font-black uppercase tracking-wider text-[#0a2356] mb-2.5">
-            People Are Talking. See What They're Saying.
-          </h2>
-
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm text-slate-700 font-medium">
-            <span className="font-bold text-slate-900">Excellent</span>
-
-            {/* Trustpilot-Style Green Square Star Badges */}
-            <div className="inline-flex items-center space-x-1">
-              {[...Array(5)].map((_, i) => (
-                <span
-                  key={i}
-                  className="w-5 h-5 bg-[#00b67a] text-white flex items-center justify-center text-[10px] font-bold rounded-xs"
-                >
-                  ★
-                </span>
-              ))}
-            </div>
-
-            <span className="font-semibold text-slate-900 underline decoration-slate-400">
-              4,920 reviews
-            </span>
-            <span className="text-slate-400">on</span>
-            <span className="font-bold text-[#00b67a] flex items-center">
-              ★ Trustpilot & Google
-            </span>
-          </div>
-        </div>
       </div>
     </section>
   )

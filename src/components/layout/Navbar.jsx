@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { WHATSAPP_DEMO_URL, CALL_PHONE_NUMBER } from '../../data/constants'
+import { WHATSAPP_DEMO_URL, DISPLAY_PHONE } from '../../data/constants'
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -17,8 +17,7 @@ export default function Navbar() {
     { name: 'Our Advantage', href: '#why-us' },
     { name: 'Curriculum', href: '#courses' },
     { name: 'Comparison', href: '#comparison' },
-    { name: 'Mentors', href: '#mentors' },
-    { name: 'Reviews', href: '#reviews' },
+    { name: 'Mentor', href: '#mentors' },
     { name: 'FAQs', href: '#faqs' },
     { name: 'Contact', href: '#contact' },
   ]
@@ -35,7 +34,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
-        {/* Brand Logo (Exact OTA Style: Clean Blue & White) */}
+        {/* Brand Logo: Sawriya Trading Academy */}
         <a href="#" className="flex items-center space-x-3 group">
           <div className="w-10 h-10 rounded-xl bg-[#0a2356] flex items-center justify-center text-white shadow-sm group-hover:bg-[#081b42] transition-colors">
             <svg className="w-6 h-6 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -46,16 +45,16 @@ export default function Navbar() {
           <div>
             <div className="flex items-center space-x-1.5">
               <span className="text-xl font-black tracking-tight text-[#0a2356] block leading-none">
-                Trading Academy
+                Sawriya
               </span>
             </div>
-            <span className="text-[10px] font-mono text-emerald-700 font-bold tracking-widest uppercase mt-0.5 block">
-              Sawriya Educational Institute
+            <span className="text-[11px] font-mono text-emerald-700 font-bold tracking-widest uppercase mt-0.5 block">
+              Trading Academy
             </span>
           </div>
         </a>
 
-        {/* Desktop Navigation Links (inspired by Online Trading Academy) */}
+        {/* Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center space-x-8 font-semibold text-sm text-[#0a2356]">
           {navLinks.map((link) => (
             <a
@@ -71,11 +70,11 @@ export default function Navbar() {
         {/* Right CTA Actions */}
         <div className="hidden sm:flex items-center space-x-4">
           <a
-            href={`tel:${CALL_PHONE_NUMBER.replace(/\s+/g, '')}`}
-            className="hidden xl:inline-flex items-center text-xs font-mono font-semibold text-slate-600 hover:text-[#0a2356]"
+            href={`tel:${DISPLAY_PHONE}`}
+            className="hidden xl:inline-flex items-center text-xs font-mono font-semibold text-slate-700 hover:text-[#0a2356]"
           >
             <i className="fa-solid fa-phone text-emerald-600 mr-2"></i>
-            <span>{CALL_PHONE_NUMBER}</span>
+            <span>{DISPLAY_PHONE}</span>
           </a>
 
           <a
@@ -136,7 +135,7 @@ export default function Navbar() {
               <span>Book 2 Free Live Demo Classes</span>
             </a>
             <div className="text-center text-xs text-slate-500 pt-1">
-              📞 Questions? Call <span className="font-semibold text-slate-800">{CALL_PHONE_NUMBER}</span>
+              📞 Questions? Call <span className="font-semibold text-slate-800">{DISPLAY_PHONE}</span>
             </div>
           </div>
         </div>

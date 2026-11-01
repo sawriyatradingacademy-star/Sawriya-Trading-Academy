@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { faqList } from '../../data/faqData'
-import { WHATSAPP_DEMO_URL, CALL_PHONE_NUMBER } from '../../data/constants'
+import { WHATSAPP_DEMO_URL } from '../../data/constants'
 import SectionHeader from '../ui/SectionHeader'
 
 export default function FaqSection() {
@@ -60,28 +60,21 @@ export default function FaqSection() {
           })}
         </div>
 
-        {/* Still have questions banner */}
+        {/* Still have questions banner (without Call Counselor button) */}
         <div className="mt-10 text-center bg-white border border-slate-200 rounded-3xl p-8 shadow-xs">
           <h4 className="font-bold text-slate-900 text-lg">Have more specific questions?</h4>
           <p className="text-slate-600 text-xs sm:text-sm mt-1 max-w-lg mx-auto">
-            Book 2 Free Live Demo Classes and ask your questions directly to our instructors on WhatsApp.
+            Book 2 Free Live Demo Classes and ask your questions directly to Kapil Singla on WhatsApp.
           </p>
-          <div className="mt-5 flex flex-wrap justify-center gap-3">
+          <div className="mt-5 flex justify-center">
             <a
               href={WHATSAPP_DEMO_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#16a34a] hover:bg-[#15803d] text-white font-black uppercase tracking-wider text-xs sm:text-sm px-6 py-3 rounded-xl transition-all shadow-sm flex items-center space-x-2"
+              className="bg-[#16a34a] hover:bg-[#15803d] text-white font-black uppercase tracking-wider text-xs sm:text-sm px-8 py-3.5 rounded-xl transition-all shadow-sm flex items-center space-x-2"
             >
               <i className="fa-brands fa-whatsapp text-lg"></i>
-              <span>Book 2 Free Demo Classes</span>
-            </a>
-            <a
-              href={`tel:${CALL_PHONE_NUMBER.replace(/\s+/g, '')}`}
-              className="border border-slate-300 hover:border-slate-400 text-slate-800 font-semibold text-xs sm:text-sm px-6 py-3 rounded-xl transition-colors flex items-center space-x-2"
-            >
-              <i className="fa-solid fa-phone text-emerald-600"></i>
-              <span>Call Counselor</span>
+              <span>Book 2 Free Demo Classes on WhatsApp</span>
             </a>
           </div>
         </div>

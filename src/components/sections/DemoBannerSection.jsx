@@ -23,7 +23,7 @@ export default function DemoBannerSection() {
               </h3>
 
               <p className="text-slate-200 text-sm sm:text-base max-w-2xl leading-relaxed">
-                Most institutes show historical screenshots. We invite you to join our actual live market Zoom room where lead instructors trade real market hours in front of you. Evaluate our clarity, discipline, and methodology for yourself.
+                Most other courses show historical screenshots. We invite you to join our actual live market Zoom room where lead mentor Kapil Singla trades real market hours in front of you. Evaluate our clarity, discipline, and methodology for yourself.
               </p>
 
               {/* 3 Quick Points */}

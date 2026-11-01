@@ -1,4 +1,4 @@
-import { WHATSAPP_DEMO_URL, CALL_PHONE_NUMBER, ACADEMY_EMAIL } from '../../data/constants'
+import { WHATSAPP_DEMO_URL, DISPLAY_PHONE, ACADEMY_FULL_ADDRESS, ACADEMY_EMAIL, ACADEMY_TIMINGS } from '../../data/constants'
 import { DemoPassIcon } from '../ui/Icons'
 
 export default function ContactSection() {
@@ -11,10 +11,10 @@ export default function ContactSection() {
             Admissions & Student Desk
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0a2356] tracking-tight leading-tight">
-            Connect Directly With Our Counselors
+            Connect Directly With Our Academy
           </h2>
           <p className="text-slate-600 mt-4 text-base sm:text-lg leading-relaxed">
-            Have questions about the 6-week curriculum, next batch start date, or want to claim your <strong>2 Free Live Demo Classes</strong>? Reach out to us directly on WhatsApp or phone.
+            Have questions about the 6-week curriculum, next batch schedule, or want to claim your <strong>2 Free Live Demo Classes</strong>? Connect directly via WhatsApp or visit our Gurugram center.
           </p>
         </div>
 
@@ -28,13 +28,13 @@ export default function ContactSection() {
                 <i className="fa-brands fa-whatsapp"></i>
               </div>
               <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30">
-                Instant Response
+                Direct WhatsApp Support
               </span>
               <h3 className="text-xl font-bold text-white mt-3">
                 Chat on WhatsApp
               </h3>
               <p className="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed">
-                Connect directly with our admissions team. Receive the syllabus PDF, class schedules, and your 2 Free Demo Zoom links instantly.
+                Connect directly with mentor Kapil Singla. Receive the 6-week curriculum breakdown, schedules, and your 2 Free Demo Zoom links instantly.
               </p>
             </div>
 
@@ -43,59 +43,59 @@ export default function ContactSection() {
                 href={WHATSAPP_DEMO_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full bg-[#25D366] hover:bg-[#20ba5a] text-slate-950 font-black uppercase tracking-wider py-3.5 px-4 rounded-xl text-xs sm:text-sm flex items-center justify-center space-x-2 transition-transform transform group-hover:scale-[1.02] shadow-md"
+                className="w-full bg-[#25D366] hover:bg-[#20ba5a] text-slate-950 font-black uppercase tracking-wider py-3.5 px-4 rounded-xl text-xs sm:text-sm flex items-center justify-center space-x-2 transition-transform transform group-hover:scale-[1.02] shadow-md text-center"
               >
                 <i className="fa-brands fa-whatsapp text-lg"></i>
-                <span>Open WhatsApp Chat</span>
+                <span>Open WhatsApp ({DISPLAY_PHONE})</span>
               </a>
             </div>
           </div>
 
-          {/* Card 2: Phone Hotline */}
+          {/* Card 2: Phone Helpline */}
           <div className="bg-[#fcfbf9] rounded-3xl p-8 border border-slate-200/90 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
             <div>
               <div className="w-14 h-14 rounded-2xl bg-blue-50 text-[#0a2356] flex items-center justify-center text-2xl mb-6 border border-blue-200">
                 <i className="fa-solid fa-phone"></i>
               </div>
               <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 font-bold bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
-                Student Helpline
+                Academy Helpline
               </span>
               <h3 className="text-xl font-bold text-[#0a2356] mt-3">
-                Call Our Admissions Desk
+                Call Our Desk
               </h3>
               <p className="text-slate-600 text-xs sm:text-sm mt-2 leading-relaxed">
-                Speak directly with an academic counselor to discuss your learning goals, background, and optimal batch timing.
+                Speak directly with Sawriya Trading Academy to discuss your trading goals and upcoming batch timings.
               </p>
             </div>
 
             <div className="pt-8">
               <a
-                href={`tel:${CALL_PHONE_NUMBER.replace(/\s+/g, '')}`}
+                href={`tel:${DISPLAY_PHONE}`}
                 className="w-full bg-[#0a2356] hover:bg-[#081a3d] text-white font-bold py-3.5 px-4 rounded-xl text-xs sm:text-sm flex items-center justify-center space-x-2 transition-colors shadow-sm text-center"
               >
                 <i className="fa-solid fa-phone text-xs"></i>
-                <span>Call {CALL_PHONE_NUMBER}</span>
+                <span>Call {DISPLAY_PHONE}</span>
               </a>
               <div className="text-[11px] text-slate-500 text-center mt-2 font-mono">
-                Mon - Sat: 9:00 AM - 7:30 PM
+                {ACADEMY_TIMINGS}
               </div>
             </div>
           </div>
 
-          {/* Card 3: Offline Academy Campus */}
+          {/* Card 3: Gurugram Academy Campus */}
           <div className="bg-[#fcfbf9] rounded-3xl p-8 border border-slate-200/90 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between md:col-span-2 lg:col-span-1">
             <div>
               <div className="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-2xl mb-6 border border-emerald-200">
                 <i className="fa-solid fa-location-dot"></i>
               </div>
               <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                Physical Campus
+                Gurugram Academy
               </span>
               <h3 className="text-xl font-bold text-[#0a2356] mt-3">
-                Visit Academy Center
+                Academy Address
               </h3>
-              <p className="text-slate-600 text-xs sm:text-sm mt-2 leading-relaxed">
-                Sawriya Tower, 3rd Floor, Financial District, Indore, Madhya Pradesh 452010.
+              <p className="text-slate-700 text-xs sm:text-sm mt-2 leading-relaxed font-medium">
+                {ACADEMY_FULL_ADDRESS}
               </p>
             </div>
 

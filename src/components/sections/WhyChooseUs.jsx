@@ -160,11 +160,11 @@ export default function WhyChooseUs() {
 
             <div className="pt-6 mt-4 border-t border-slate-100 flex items-center space-x-3">
               <div className="flex -space-x-2">
-                <div className="w-7 h-7 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[10px] font-bold border-2 border-white">RS</div>
-                <div className="w-7 h-7 rounded-full bg-slate-800 text-white flex items-center justify-center text-[10px] font-bold border-2 border-white">AP</div>
-                <div className="w-7 h-7 rounded-full bg-amber-500 text-white flex items-center justify-center text-[10px] font-bold border-2 border-white">PV</div>
+                <div className="w-7 h-7 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[10px] font-bold border-2 border-white">KS</div>
+                <div className="w-7 h-7 rounded-full bg-slate-800 text-white flex items-center justify-center text-[10px] font-bold border-2 border-white">ST</div>
+                <div className="w-7 h-7 rounded-full bg-amber-500 text-white flex items-center justify-center text-[10px] font-bold border-2 border-white">5K</div>
               </div>
-              <span className="text-xs font-semibold text-slate-700">15,000+ Alumni Network</span>
+              <span className="text-xs font-semibold text-slate-700">5,000+ Alumni Network</span>
             </div>
           </div>
 

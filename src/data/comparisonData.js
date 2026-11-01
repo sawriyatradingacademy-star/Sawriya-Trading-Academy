@@ -2,7 +2,7 @@ export const comparisonPoints = [
   {
     parameter: 'Knowledge Source',
     retail: 'Random YouTube videos, conflicting Instagram reels & unverified Telegram groups.',
-    sawriya: 'Structured, step-by-step modular curriculum tested across 15,000+ students.',
+    sawriya: 'Structured, step-by-step modular curriculum tested across 5,000+ students.',
   },
   {
     parameter: 'Trading Strategy',
